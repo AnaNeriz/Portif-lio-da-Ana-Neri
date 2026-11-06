@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Configuração da Foto de Perfil -->
+  <script>
+    // Envie sua foto para o repositório do GitHub, na mesma pasta do index.html, e coloque aqui o nome exato do arquivo (exemplo: foto.jpg ou foto.png). Também funciona com um link de imagem.
+    const foto = "";
+  </script>
+
+  <title>Ana Luiza Neri Souza Amorim | Desenvolvedora Web & Analista de Dados</title>
+  <meta name="description" content="Portfólio profissional de Ana Luiza Neri Souza Amorim. Estudante de Ciência da Computação na UFMT com foco em Desenvolvimento Web e Dados.">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ana Luiza Neri Souza Amorim | Desenvolvedora Web & Analista de Dados">
+  <meta property="og:description" content="Portfólio profissional de Ana Luiza Neri Souza Amorim. Bacharelado em Ciência da Computação (UFMT).">
+  
+  <!-- Fontes Google: VT323 (Estilo PC antigo) e Outfits (Texto moderno/arredondado) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* VARIAVEIS DE DESIGN E TEMAS - ESTETICA RETRO COMPUTADOR BARBIE */
+    :root {
+      /* Tema Claro (Barbie OS - Classic Light) */
+      --cor-fundo: #FFF0F5;          /* Rosa bem suave / LavenderBlush */
+      --cor-superficie: #FFFFFF;     /* Branco janelas */
+      --cor-janela-topo: #FFB6C1;    /* Rosa topo janelas */
+      --cor-borda: #F472B6;          /* Borda rosa vintage */
+      --cor-sombra: #DB2777;         /* Sombra retrô 3D */
+      --cor-texto: #374151;          /* Texto cinza escuro legível */
+      --cor-texto-suave: #6B7280;    /* Subtítulos e detalhes */
+      --cor-destaque: #DA1884;       /* Rosa Barbie Oficial */
+      --cor-destaque-hover: #B8126E; /* Rosa escuro para hover */
+      --cor-badge-bg: #FCE7F3;       /* Fundo das tags */
+      --cor-badge-texto: #9D174D;    /* Texto das tags */
+
+      --fonte-titulo: 'VT323', monospace;
+      --fonte-corpo: 'Outfit', sans-serif;
+      --raio-borda: 8px;
+    }
+
+    [data-theme="dark"] {
+      /* Tema Escuro (Barbie Cyber Synth - Dark Mode) */
+      --cor-fundo: #180914;          /* Roxo/Rosa profundo */
+      --cor-superficie: #261222;     /* Superfície escura */
+      --cor-janela-topo: #4A153A;    /* Topo de janela escuro */
+      --cor-borda: #831843;          /* Borda vinho/rosa escuro */
+      --cor-sombra: #9D174D;         /* Sombra retrô escura */
+      --cor-texto: #F3E8EE;          /* Texto claro acinzentado */
+      --cor-texto-suave: #9CA3AF;    /* Subtítulos no escuro */
+      --cor-destaque: #F43F5E;       /* Destaque rosa neon suave */
+      --cor-destaque-hover: #FB7185;
+      --cor-badge-bg: #371B2F;
+      --cor-badge-texto: #F472B6;
+    }
+
+    /* Reset global */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: var(--fonte-corpo);
+      font-size: 17px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Tipografia Estilizada */
+    h1, h2, h3, .font-retro {
+      font-family: var(--fonte-titulo);
+      letter-spacing: 1px;
+    }
+
+    /* Layout Geral */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Estilo de Janela de Computador Antigo */
+    .window-box {
+      background: var(--cor-superficie);
+      border: 2px solid var(--cor-destaque);
+      border-radius: var(--raio-borda);
+      box-shadow: 4px 4px 0px var(--cor-sombra);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .window-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0px var(--cor-sombra);
+    }
+
+    .window-header {
+      background-color: var(--cor-janela-topo);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--cor-destaque);
+    }
+
+    .window-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--cor-destaque);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.2);
+    }
+    .btn-close { background-color: #FF5F56; }
+    .btn-min { background-color: #FFBD2E; }
+    .btn-max { background-color: #27C93F; }
+
+    .window-body {
+      padding: 24px;
+    }
+
+    /* Cabeçalho / Menu Fixo */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: var(--cor-fundo);
+      border-bottom: 2px solid var(--cor-borda);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 65px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      color: var(--cor-destaque);
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cor-destaque);
+    }
+
+    .theme-toggle-btn {
+      background: none;
+      border: 2px solid var(--cor-destaque);
+      color: var(--cor-destaque);
+      padding: 6px 12px;
+      border-radius: var(--raio-borda);
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--cor-destaque);
+      color: #fff;
+    }
+
+    /* Menu Mobile */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--cor-destaque);
+      cursor: pointer;
+    }
+
+    /* Seção Principal (Hero) */
+    .hero {
+      padding-top: 110px;
+      padding-bottom: 40px;
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profile-avatar-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border: 4px solid var(--cor-destaque);
+      border-radius: 12px;
+      box-shadow: 5px 5px 0px var(--cor-sombra);
+      overflow: hidden;
+      background-color: var(--cor-badge-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-fallback {
+      font-family: var(--fonte-titulo);
+      font-size: 4rem;
+      color: var(--cor-destaque);
+      font-weight: bold;
+    }
+
+    .hero-info h1 {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      color: var(--cor-destaque);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--cor-texto-suave);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .hero-seeking {
+      background: var(--cor-badge-bg);
+      color: var(--cor-badge-texto);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid var(--cor-borda);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    /* Botões Padrão Retro */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--raio-borda);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-height: 44px;
+    }
+
+    .btn-primary {
+      background-color: var(--cor-destaque);
+      color: #FFFFFF;
+      border: 2px solid var(--cor-destaque);
+      box-shadow: 3px 3px 0px var(--cor-sombra);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--cor-destaque-hover);
+      box-shadow: 4px 4px 0px var(--cor-sombra);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--cor-texto);
+      border: 2px solid var(--cor-destaque);
+      box-shadow: 3px 3px 0px var(--cor-sombra);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--cor-badge-bg);
+      color: var(--cor-destaque);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--cor-destaque);
+      border-radius: var(--raio-borda);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--cor-destaque);
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 2px 2px 0px var(--cor-sombra);
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: var(--cor-destaque);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Seções Comuns */
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--cor-destaque);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      font-size: 1.8rem;
+    }
+
+    /* Grid de Habilidades */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--cor-superficie);
+      border: 2px solid var(--cor-borda);
+      border-radius: var(--raio-borda);
+      padding: 16px;
+    }
+
+    .skill-card h3 {
+      font-size: 1.4rem;
+      color: var(--cor-destaque);
+      margin-bottom: 12px;
+      border-bottom: 1px dashed var(--cor-borda);
+      padding-bottom: 6px;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .badge-level {
+      font-size: 0.75rem;
+      background: var(--cor-badge-bg);
+      color: var(--cor-badge-texto);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid var(--cor-borda);
+    }
+
+    /* Grid de Projetos */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-title {
+      font-size: 1.6rem;
+      color: var(--cor-destaque);
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--cor-texto);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      background: var(--cor-badge-bg);
+      color: var(--cor-badge-texto);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--cor-borda);
+    }
+
+    /* Linha do Tempo (Experiência) */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      border-left: 3px dashed var(--cor-destaque);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding-left: 15px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cor-destaque);
+      border: 2px solid var(--cor-superficie);
+    }
+
+    .timeline-role {
+      font-size: 1.4rem;
+      color: var(--cor-destaque);
+    }
+
+    .timeline-org {
+      font-weight: 600;
+      color: var(--cor-texto-suave);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    /* Formação Acadêmica */
+    .edu-card {
+      margin-bottom: 20px;
+    }
+
+    .edu-title {
+      font-size: 1.5rem;
+      color: var(--cor-destaque);
+    }
+
+    .edu-detail {
+      color: var(--cor-texto-suave);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: var(--cor-janela-topo);
+      border-top: 2px solid var(--cor-borda);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-text {
+      font-family: var(--fonte-titulo);
+      font-size: 1.3rem;
+      color: var(--cor-destaque);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-actions, .social-links {
+        justify-content: center;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background-color: var(--cor-fundo);
+        border-bottom: 2px solid var(--cor-borda);
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* Respeito a preferência de movimento reduzido */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Fixo no Topo -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-desktop"></i> AnaLuiza.exe
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li>
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
+            <i class="fa-solid fa-palette"></i> <span id="themeText">Tema</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Seção Inicial / Hero -->
+    <section class="hero" id="inicio">
+      <div class="window-box w-full" style="width: 100%;">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-user"></i> perfil_profissional.sys</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="hero-grid">
+            
+            <div class="profile-avatar-container" id="avatarBox">
+              <!-- JS renderiza a foto se disponível ou o Avatar de Iniciais -->
+            </div>
+
+            <div class="hero-info">
+              <h1>Ana Luiza Neri Souza Amorim</h1>
+              <div class="hero-subtitle">Desenvolvedora Web & Analista de Dados | Graduanda em Ciência da Computação</div>
+              
+              <div class="hero-seeking">
+                <i class="fa-solid fa-briefcase"></i> Buscando oportunidades de emprego em Desenvolvimento Web e Dados
+              </div>
+
+              <div class="hero-actions">
+                <a href="#projetos" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i> Ver projetos</a>
+                <a href="#contato" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Entrar em contato</a>
+              </div>
+
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/ana-neriz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/AnaNeriz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:analuizanerisouza189@gmail.com" aria-label="E-mail">
+                  <i class="fa-solid fa-at"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-address-card"></i> sobre_mim.txt</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <h2 class="section-title"><i class="fa-solid fa-heart"></i> Sobre mim</h2>
+          <p>
+            Ingressei na Ciência da Computação motivada pelo gosto em resolver problemas e encontrar soluções lógicas. Atualmente no 6º semestre na Universidade Federal de Mato Grosso (UFMT), venho direcionando meus estudos para o desenvolvimento web e a análise de dados. Sou uma pessoa responsável, organizada e determinada, aplicando essa postura nas atividades acadêmicas, em projetos de extensão e no dia a dia do trabalho.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-sliders"></i> habilidades.cfg</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <h2 class="section-title"><i class="fa-solid fa-code"></i> Habilidades</h2>
+          
+          <div class="skills-grid">
+            
+            <!-- Linguagens -->
+            <div class="skill-card">
+              <h3><i class="fa-solid fa-terminal"></i> Linguagens</h3>
+              <ul class="skill-list">
+                <li class="skill-item"><span>Python</span> <span class="badge-level">Básico</span></li>
+                <li class="skill-item"><span>SQL</span> <span class="badge-level">Básico</span></li>
+                <li class="skill-item"><span>Java</span> <span class="badge-level">Básico</span></li>
+                <li class="skill-item"><span>C#</span> <span class="badge-level">Básico</span></li>
+              </ul>
+            </div>
+
+            <!-- Frameworks e Bancos -->
+            <div class="skill-card">
+              <h3><i class="fa-solid fa-database"></i> Frameworks & DB</h3>
+              <ul class="skill-list">
+                <li class="skill-item"><span>Django</span> <span class="badge-level">Básico</span></li>
+                <li class="skill-item"><span>MySQL</span> <span class="badge-level">Básico</span></li>
+                <li class="skill-item"><span>PostgreSQL</span> <span class="badge-level">Básico</span></li>
+              </ul>
+            </div>
+
+            <!-- Ferramentas -->
+            <div class="skill-card">
+              <h3><i class="fa-solid fa-toolbox"></i> Ferramentas</h3>
+              <ul class="skill-list">
+                <li class="skill-item"><span>Linux</span> <span class="badge-level">Utilizo no dia a dia</span></li>
+                <li class="skill-item"><span>VS Code</span> <span class="badge-level">Utilizo no dia a dia</span></li>
+                <li class="skill-item"><span>Git</span> <span class="badge-level">Utilizo no dia a dia</span></li>
+              </ul>
+            </div>
+
+            <!-- Comportamentais -->
+            <div class="skill-card">
+              <h3><i class="fa-solid fa-star"></i> Comportamentais</h3>
+              <ul class="skill-list">
+                <li class="skill-item"><span>Responsabilidade</span></li>
+                <li class="skill-item"><span>Organização</span></li>
+                <li class="skill-item"><span>Determinação</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-folder"></i> meus_projetos.exe</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Projetos</h2>
+          
+          <div class="projects-grid">
+            
+            <!-- Projeto 1 -->
+            <div class="window-box project-card" style="margin-bottom:0;">
+              <div class="window-header">
+                <span class="window-title" style="font-size: 1.1rem;"><i class="fa-solid fa-cloud"></i> Projeto 366/2025</span>
+              </div>
+              <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
+                <h3 class="project-title">Transferência Tecnológica e Computação em Nuvem (SUAP / SGC)</h3>
+                <p class="project-desc">
+                  Projeto de pesquisa e extensão voltado à avaliação da infraestrutura em nuvem para implantação, customização e hospedagem dos sistemas SUAP e SGC na UFMT. Atuo na equipe técnica investigando e implementando soluções para integração com assinaturas e certificados digitais via gov.br.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Django</span>
+                  <span class="tag">Computação em Nuvem</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="window-box project-card" style="margin-bottom:0;">
+              <div class="window-header">
+                <span class="window-title" style="font-size: 1.1rem;"><i class="fa-solid fa-users-line"></i> Extensão</span>
+              </div>
+              <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
+                <h3 class="project-title">Projeto de Extensão Conecta Jovem</h3>
+                <p class="project-desc">
+                  Atuação no projeto voltado à capacitação tecnológica de jovens entre 15 e 24 anos da Baixada Cuiabana. Participei da elaboração dos materiais didáticos (slides) e ministrei o módulo de organização e manutenção de computadores em conjunto com um professor e uma colega, abordando montagem, diagnóstico de hardware e SOs.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Manutenção de Computadores</span>
+                  <span class="tag">Elaboração Didática</span>
+                  <span class="tag">Capacitação</span>
+                </div>
+                <div>
+                  <a href="https://conectajovem.loglabdigital.com.br/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.85rem; padding: 6px 12px;">
+                    <i class="fa-solid fa-up-right-from-square"></i> Ver Mais Detalhes
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-timeline"></i> historico_profissional.log</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiência & Atividades</h2>
+          
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <h3 class="timeline-role">Estagiária de Desenvolvimento</h3>
+              <div class="timeline-org">Redeflex | Início recente (2026)</div>
+              <p>Atuação no desenvolvimento de software.</p>
+            </div>
+
+            <div class="timeline-item">
+              <h3 class="timeline-role">Voluntária em Eventos Acadêmicos</h3>
+              <div class="timeline-org">SEMATEC & BRACIS</div>
+              <p>Atuação no suporte logístico e operacional da SEMATEC (Semana de Tecnologia) e como voluntária na organização da BRACIS (Brazilian Conference on Intelligent Systems).</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-graduation-cap"></i> formacao_e_idiomas.doc</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body">
+          <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Formação & Idiomas</h2>
+          
+          <div class="edu-card">
+            <h3 class="edu-title">Bacharelado em Ciência da Computação</h3>
+            <div class="edu-detail">Universidade Federal de Mato Grosso (UFMT) | 6º Semestre</div>
+            <p>Previsão de Formatura: 12/2027</p>
+          </div>
+
+          <hr style="border: 0; border-top: 1px dashed var(--cor-borda); margin: 20px 0;">
+
+          <h3 class="edu-title" style="font-size: 1.3rem; margin-bottom: 8px;"><i class="fa-solid fa-language"></i> Idiomas</h3>
+          <p><strong>Inglês:</strong> Básico II (em curso pelo Programa de Línguas do Instituto de Linguagens da UFMT).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="window-box">
+        <div class="window-header">
+          <span class="window-title"><i class="fa-solid fa-paper-plane"></i> contato.msg</span>
+          <div class="window-controls">
+            <span class="window-btn btn-close"></span>
+            <span class="window-btn btn-min"></span>
+            <span class="window-btn btn-max"></span>
+          </div>
+        </div>
+        <div class="window-body" style="text-align: center;">
+          <h2 class="section-title" style="justify-content: center;"><i class="fa-solid fa-comments"></i> Entrar em contato</h2>
+          <p style="margin-bottom: 20px;">Estou disponível para novas oportunidades e conexões profissionais.</p>
+          
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="mailto:analuizanerisouza189@gmail.com" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i> Enviar E-mail
+            </a>
+            <a href="https://www.linkedin.com/in/ana-neriz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-linkedin"></i> Conectar no LinkedIn
+            </a>
+            <a href="https://github.com/AnaNeriz" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-github"></i> Ver GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">© <span id="year"></span> Ana Luiza Neri Souza Amorim • Desenvolvido com estilo Barbie Y2K OS</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Ano Atual no Rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Renderização da Foto ou Fallback
+    const avatarBox = document.getElementById('avatarBox');
+    if (typeof foto !== 'undefined' && foto.trim() !== "") {
+      const img = document.createElement('img');
+      img.src = foto;
+      img.alt = "Foto de Ana Luiza Neri Souza Amorim";
+      img.className = "profile-img";
+      img.onerror = function() {
+        renderFallbackAvatar();
+      };
+      avatarBox.appendChild(img);
+    } else {
+      renderFallbackAvatar();
+    }
+
+    function renderFallbackAvatar() {
+      avatarBox.innerHTML = '<div class="avatar-fallback">AN</div>';
+    }
+
+    // Alternador de Tema (Light/Dark Mode)
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeText = document.getElementById('themeText');
+    
+    // Recupera preferência do usuário ou padrão light
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeText.textContent = 'Tema Escuro';
+    } else {
+      themeText.textContent = 'Tema Claro';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeText.textContent = 'Tema Claro';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeText.textContent = 'Tema Escuro';
+      }
+    });
+
+    // Menu Hamburger Mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
